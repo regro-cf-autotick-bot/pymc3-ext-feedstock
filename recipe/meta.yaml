@@ -16,12 +16,13 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - setuptools_scm
   run:
-    - python
+    - python >=3.6
     - pymc3 >=3.9
+    - aesara-theano-fallback >=0.0.2
 
 test:
   imports:
