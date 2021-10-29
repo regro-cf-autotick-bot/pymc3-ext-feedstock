@@ -1,5 +1,5 @@
 {% set name = "pymc3-ext" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymc3_ext-{{ version }}.tar.gz
-  sha256: 2d552e44d3de884fa1a37d25b4f01b1e365ddf8e7d928c0fa266e805702d3ace
+  sha256: a66a56a6372125c89f67b6c683614dedc2b0b6310344fc8893b81d876c0acf70
 
 build:
   noarch: python
