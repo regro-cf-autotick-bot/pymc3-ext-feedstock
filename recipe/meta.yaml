@@ -6,25 +6,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymc3_ext-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymc3_ext-{{ version }}.tar.gz
   sha256: a66a56a6372125c89f67b6c683614dedc2b0b6310344fc8893b81d876c0acf70
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools_scm
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - pymc3 >=3.9
     - aesara-theano-fallback >=0.0.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pymc3_ext
 
